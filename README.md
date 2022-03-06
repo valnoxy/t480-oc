@@ -24,9 +24,15 @@
 ## ⚠️ Disclaimer
 This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any harm you cause to your device. This guide is provided "as-is" and all steps taken are done at your own risk.
 
-**This is currently only a placeholder:** The first release of this configuration will be published soon (Expected on 03/10/2022).
+**This is currently only a debug build:** The first release of this configuration will be published soon (Expected on 03/10/2022).
 
 ## ✨ Features
+
+### To-Do
+- [ ] Include SSDT-GPIO/XOSI
+- [ ] Disable _OSI to XOSI patch (replaced by SSDT-GPIO/XOSI)
+- [ ] Debload SSDTs
+- [ ] Build USBMap.kext
 
 ### What works
 - Unknown
