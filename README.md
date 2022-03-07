@@ -26,7 +26,7 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 
 **This is currently only a placeholder:** The first release of this configuration will be published soon (Expected on 03/10/2022).
 
-<a href="https://github.com/valnoxy/t440p-oc/tree/develop"><strong>
+<a href="https://github.com/valnoxy/t480-oc/tree/develop"><strong>
 Switch to develop branch (first beta release) »</strong></a>
 
 ## ✨ Features
