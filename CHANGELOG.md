@@ -9,8 +9,6 @@
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.0.0-develop
-   <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
    <a href="https://github.com/valnoxy/t480-oc/issues">Report Bug</a>
