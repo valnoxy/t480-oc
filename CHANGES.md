@@ -22,7 +22,7 @@
 
 ## 📝 Changelog
 <details>  
-<summary><strong>📅 Version 1.0: 10.03.2022</strong></summary>
+<summary><strong>📅 Version 1.0: 13.03.2022</strong></summary>
 </br>
 
 - Initial commit (supports only Monterey)
