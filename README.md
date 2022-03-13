@@ -3,13 +3,13 @@
 <img align="right" src="https://dl.exploitox.de/t440p-oc/Hackintosh_T440p_V4.jpg" alt="macOS Monterey running on the T440p" width="300">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.8-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.7.9-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.0.0-develop
+   <strong>Version: </strong>1.0.0
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -23,15 +23,14 @@
 ## ⚠️ Disclaimer
 This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any harm you cause to your device. This guide is provided "as-is" and all steps taken are done at your own risk.
 
-The ACPI patches and the style of this README are the same as from [EETagent](https://github.com/EETagent/T480-OpenCore-Hackintosh).
+> The ACPI patches and the style of this README are from [EETagent](https://github.com/EETagent/T480-OpenCore-Hackintosh).
 
 ## 📝 To-Do
-- [X] Include SSDT-GPIO/XOSI
-- [X] Disable _OSI to XOSI patch (replaced by SSDT-GPIO/XOSI)
-- [ ] Include GUI boot interface (and maybe boot chime)
-- [ ] Recreate / Update ACPI patches
-- [ ] Build USBMap.kext
+These features will be implemented in a future update:
 
+- [X] Include GUI boot interface & boot chime
+- [ ] Build USBMap.kext
+- [ ] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
 
 <a href="https://github.com/valnoxy/t480-oc/tree/develop"><strong>
 Switch to develop branch »</strong></a>
@@ -281,6 +280,7 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 - [X] Handoff / Universal Clipboard
 - [X] Sidecar (Cable) / AirPlay to Mac
 - [X] SIP / FireVault 2
+- [X] USB-C
 
 </details>
 
@@ -291,7 +291,6 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 - [ ] Safari DRM ```Use Chromium powered Browser or Firefox to watch Amazon Prime Video, Netflix, Disney+ and others```
 - [ ] AirDrop & Continuity
 - [ ] Fingerprint Reader (Disabled with NoTouchID kext)
-- [ ] Sleep with Docking Station
 - [ ] Thunderbolt 3
 
 </details>
@@ -300,7 +299,6 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 <summary><strong>🔄 Not tested</strong></summary>
 </br>
 
-- [ ] USB-C
 - [ ] Sidecar Wireless
 - [ ] Apple Watch Unlock
 - [ ] WWAN
