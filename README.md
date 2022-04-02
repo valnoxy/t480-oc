@@ -9,7 +9,7 @@
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.0.0
+   <strong>Version: </strong>1.0.1
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -28,7 +28,7 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 ## 📝 To-Do
 These features will be implemented in a future update:
 
-- [X] Include GUI boot interface & boot chime
+- [ ] Include HeliPort Version
 - [ ] Build USBMap.kext
 - [ ] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
 

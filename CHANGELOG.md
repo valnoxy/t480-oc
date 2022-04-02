@@ -20,6 +20,14 @@
 
 ## 📝 Changelog
 <details>  
+<summary><strong>📅 Version 1.0.1: 02.04.2022</strong></summary>
+</br>
+
+- Fix boot chime by adding AudioDxe.efi (issue #2)
+
+</details>
+
+<details>  
 <summary><strong>📅 Version 1.0: 13.03.2022</strong></summary>
 </br>
 
