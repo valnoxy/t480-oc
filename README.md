@@ -3,6 +3,7 @@
 <img align="right" src="https://dl.exploitox.de/t440p-oc/Hackintosh_T440p_V4.jpg" alt="macOS Monterey running on the T440p" width="300">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
+[![macOS](https://img.shields.io/badge/macOS-Mammoth-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.8.0-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
@@ -25,6 +26,8 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 
 > The ACPI patches and the style of this README are from [EETagent](https://github.com/EETagent/T480-OpenCore-Hackintosh).
 
+&nbsp;
+
 ## 📝 To-Do
 These features will be implemented in a future update:
 
@@ -32,8 +35,7 @@ These features will be implemented in a future update:
 - [ ] Build USBMap.kext
 - [ ] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
 
-<a href="https://github.com/valnoxy/t480-oc/tree/develop"><strong>
-Switch to develop branch »</strong></a>
+&nbsp;
 
 ## Introduction
 
@@ -49,7 +51,7 @@ This repo includes multiple EFI configuations for different macOS Versions.
 | ----------------- | -------------------------------------------------------- | --------- |
 | `EFI - Monterey`  | Supports only macOS Monterey                             | `Stable`  |
 | `EFI - HeliPort`  | Supports every macOS Version, Require HeliPort app       | `Stable`  |
-
+| `EFI - Mammoth`   | Supports only macOS 13 Mammoth                           | `Alpha`   |
 
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
 Download HeliPort app »</strong></a>
@@ -73,6 +75,8 @@ These are the Hardware component I use. But this OpenCore configuation **should 
 </details>  
  
 </details>
+
+&nbsp;
 
 ## Installation
 
@@ -219,6 +223,7 @@ If you want to upgrade macOS, download the desired macOS version in the Settings
 
 </details>
 
+&nbsp;
 
 ## Post-install (optional)
 
@@ -259,6 +264,8 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 
 
 </details>
+
+&nbsp;
 
 ## Status
 
@@ -306,8 +313,12 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 
 </details>
 
+&nbsp;
+
 ## ⭐️ Feedback
 Did you find any bugs or just have some questions? Feel free to provide your feedback using the Discussions tab.
+
+&nbsp;
 
 ## 📜 License
 
