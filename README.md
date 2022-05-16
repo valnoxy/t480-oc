@@ -39,11 +39,7 @@ These features will be implemented in a future update:
 
 ## Introduction
 
-<details>  
-<summary><strong>📖 Important instructions</strong></summary>
-</br>
-
-**EFI folders**
+### EFI folders
 
 This repo includes multiple EFI configuations for different macOS Versions.
 
@@ -56,7 +52,6 @@ This repo includes multiple EFI configuations for different macOS Versions.
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
 Download HeliPort app »</strong></a>
 
-</details>
 
 <details>
 <summary><strong>💻 My Hardware</strong></summary>
