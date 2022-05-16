@@ -23,6 +23,7 @@
 <summary><strong>📅 Version 1.1.0: 16.05.2022</strong></summary>
 </br>
 
+- Add HeliPort support
 - Update OpenCore to ```0.8.0```
 - Update AppleALC to ```1.7.1```
 

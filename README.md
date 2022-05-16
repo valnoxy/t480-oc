@@ -28,7 +28,7 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 ## 📝 To-Do
 These features will be implemented in a future update:
 
-- [ ] Include HeliPort Version
+- [X] Include HeliPort Version
 - [ ] Build USBMap.kext
 - [ ] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
 
@@ -48,7 +48,7 @@ This repo includes multiple EFI configuations for different macOS Versions.
 | EFI               | Description                                              | Type      |
 | ----------------- | -------------------------------------------------------- | --------- |
 | `EFI - Monterey`  | Supports only macOS Monterey                             | `Stable`  |
-| `EFI - HeliPort`  | Supports every macOS Version, Require HeliPort app       | `Coming soon`  |
+| `EFI - HeliPort`  | Supports every macOS Version, Require HeliPort app       | `Stable`  |
 
 
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
