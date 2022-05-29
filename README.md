@@ -1,6 +1,6 @@
 # Lenovo ThinkPad T480 - OpenCore Configuation
 
-<img align="right" src="https://dl.exploitox.de/t440p-oc/Hackintosh_T440p_V4.jpg" alt="macOS Monterey running on the T440p" width="300">
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Monterey.png" alt="macOS Monterey running on the T440p" width="425">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Mammoth-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
@@ -32,8 +32,8 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 These features will be implemented in a future update:
 
 - [X] Include HeliPort Version
-- [ ] Build USBMap.kext
-- [ ] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
+- [X] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
+- [ ] Touchscreen support
 
 &nbsp;
 
