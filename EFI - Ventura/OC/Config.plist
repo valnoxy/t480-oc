@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>#WARNING - 1</key>
-	<string>This is a PRE-RELEASE configuration of the upcoming macOS 13 Mammoth</string>
+	<string>This is a PRE-RELEASE configuration of the upcoming macOS 13 Ventura</string>
 	<key>#WARNING - 2</key>
 	<string>DO NOT USE THIS IN A PRODUCTIVE ENVIRONMENT!</string>
 	<key>#WARNING - 3</key>
-	<string>rev 1.0  |  last edited: valnoxy</string>
+	<string>rev 1.1  |  last edited: valnoxy</string>
 	<key>#WARNING - 4</key>
 	<string>Changelog: https://github.com/valnoxy/t480-oc/blob/main/CHANGELOG.md</string>
 	<key>ACPI</key>
@@ -426,7 +426,7 @@
 			<key>AllowRelocationBlock</key>
 			<false/>
 			<key>AvoidRuntimeDefrag</key>
-			<true/>
+			<false/>
 			<key>DevirtualiseMmio</key>
 			<false/>
 			<key>DisableSingleUser</key>
