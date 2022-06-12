@@ -10,7 +10,7 @@
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.1.0
+   <strong>Version: </strong>1.2.0
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -33,6 +33,7 @@ These features will be implemented in a future update:
 
 - [X] Include HeliPort Version
 - [X] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
+- [X] macOS Ventura support
 - [ ] Touchscreen support
 - [ ] macOS Ventura support
 
@@ -45,17 +46,39 @@ Current state of macOS Ventura »</strong></a>
 
 &nbsp;
 
+## 🚧 macOS Ventura Support
+
+> **Warning**
+> macOS Ventura is still in Beta! I do not recommend this for productive use!
+
+In version 1.2.0, support for macOS Ventura was added. To update your system to Ventura, the following steps must be performed:
+
+1. Replace your current OpenCore confifguration with `EFI - Ventura`. See `♻️ Upgrade macOS / Switch EFI` for more infos.
+
+2. Enroll your device to the Developer Seed. Use `macOS Developer Beta Access Utility` from your Apple Developer Account or by typing the following command into the Terminal: `/System/Library/PrivateFrameworks/Seeding.framework/Versions/Current/Resources/seedutil enroll DeveloperSeed`
+
+3. Download macOS Ventura via Software Update. Create a offline installer or simply update.
+
+
+### Tested Builds
+- [X] Developer Beta 1 `(22A5266r)` 
+
+<a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
+Current state of macOS Ventura »</strong></a>
+
+&nbsp;
+
 ## Introduction
 
 ### EFI folders
 
 This repo includes multiple EFI configuations for different macOS Versions.
 
-| EFI               | Description                                              | Type      |
-| ----------------- | -------------------------------------------------------- | --------- |
-| `EFI - Monterey`  | Supports only macOS Monterey                             | `Stable`  |
-| `EFI - HeliPort`  | Supports every macOS Version, Require HeliPort app       | `Stable`  |
-| `EFI - Ventura`   | Supports only macOS 13 Ventura                           | `Alpha`   |
+| EFI               | Description                                                               | Type      |
+| ----------------- | ------------------------------------------------------------------------- | --------- |
+| `EFI - Monterey`  | Supports only macOS Monterey                                              | `Stable`  |
+| `EFI - HeliPort`  | Supports every macOS Version (except Ventura), Require HeliPort app       | `Stable`  |
+| `EFI - Ventura`   | Supports only macOS 13 Ventura                                            | `Beta`    |
 
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
 Download HeliPort app »</strong></a>
@@ -256,9 +279,6 @@ Now press `ALT + SPACE` and open terminal. Type the following command:
 
 Big Sur:
 ```sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyUSB --downloadassets```
-
-Catalina:
-```sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyUSB --downloadassets```
 
 Monterey:
 ```sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyUSB --downloadassets```
