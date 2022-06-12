@@ -35,14 +35,6 @@ These features will be implemented in a future update:
 - [X] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
 - [X] macOS Ventura support
 - [ ] Touchscreen support
-- [ ] macOS Ventura support
-
-> **Warning**
-> macOS Ventura is still in Beta! I do not recommend this for productive use!
-
-<a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
-Current state of macOS Ventura »</strong></a>
-
 
 &nbsp;
 
