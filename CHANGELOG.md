@@ -21,6 +21,26 @@
 
 ## 📝 Changelog
 <details>  
+<summary><strong>📅 Version 1.2.0: 12.06.2022</strong></summary>
+</br>
+
+### Changes
+- Add macOS 13 Ventura beta support
+
+### OpenCore / Kext Versions:
+- **OpenCore**: Modified version of [e05a69d](https://github.com/acidanthera/OpenCorePkg/commit/e05a69da640009ac1983c7c8c78af4f0d9b4bc6f)
+- **AppleALC**: 1.7.3 ([bce915e](https://github.com/acidanthera/AppleALC/commit/bce915e4d52a04447932eef7a32696433d16dc7f))
+- **CPUFriend**: 1.2.6 ([44efb5f](https://github.com/acidanthera/CPUFriend/commit/44efb5fe04245cf2df4f9bcde126d240710df62e))
+- **Lilu**: 1.6.1 ([250b65c](https://github.com/acidanthera/Lilu/commit/250b65cbb4e9c3aced2673b71ac359b5d6771cfe))
+- **WhateverGreen**: 1.5.9
+
+### Screenshot
+<img src="https://dl.exploitox.de/t480-oc/T480-Ventura.png" alt="macOS Ventura running on the T480" width="650">
+
+
+</details>
+
+<details>  
 <summary><strong>📅 Version 1.1.0: 16.05.2022</strong></summary>
 </br>
 
