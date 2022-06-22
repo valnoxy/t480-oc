@@ -1,10 +1,10 @@
 # Lenovo ThinkPad T480 - OpenCore Configuation
 
-<img align="right" src="https://dl.exploitox.de/t440p-oc/Hackintosh_T440p_V4.jpg" alt="macOS Monterey running on the T440p" width="300">
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Monterey.png" alt="macOS Monterey running on the T480" width="300">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.0-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![OpenCore](https://img.shields.io/badge/OpenCore-e05a69d-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
@@ -20,6 +20,23 @@
 </br>
 
 ## 📝 Changelog
+<details>  
+<summary><strong>📅 Version 1.2.1: 22.06.2022</strong></summary>
+</br>
+
+### Changes
+- Fix HDMI output (issue #7)
+- Fix Brightness controlls (issue #7)
+- Fix Trackpad issues (issue #7 & #8)
+
+### Updated Kexts:
+- **OpenCore**: Version of [e05a69d](https://github.com/acidanthera/OpenCorePkg/commit/e05a69da640009ac1983c7c8c78af4f0d9b4bc6f)
+- **AppleALC**: 1.7.2
+- **BrcmPatchRAM**: 2.6.2
+- **WhateverGreen**: 1.5.9
+
+</details>
+
 <details>  
 <summary><strong>📅 Version 1.2.0: 12.06.2022</strong></summary>
 </br>
