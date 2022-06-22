@@ -54,6 +54,7 @@ In version 1.2.0, support for macOS Ventura was added. To update your system to 
 
 ### Tested Builds
 - [X] Developer Beta 1 `(22A5266r)` 
+- [ ] Developer Beta 2 `(22A5286j)`
 
 <a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
 Current state of macOS Ventura »</strong></a>
