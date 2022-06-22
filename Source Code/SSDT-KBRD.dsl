@@ -1,51 +1,53 @@
-// SSDT for T480 Keyboard Map & Configuration.
-
-DefinitionBlock("", "SSDT", 2, "T480", "KBRD", 0)
+DefinitionBlock ("", "SSDT", 2, "T480", "KBRD", 0x00000000)
 {
-    External(\_SB.PCI0.LPCB.KBD, DeviceObj)
+    External (_SB_.PCI0.LPCB.KBD_, DeviceObj)
 
     Scope (\_SB.PCI0.LPCB.KBD)
-    
+    {
+        If (_OSI ("Darwin"))
         {
-            If (_OSI ("Darwin"))
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                // Lenovo ThinkPad T480 Configuration Load
-                // Select specific items in VoodooPS2Controller
-                Method(_DSM, 4, NotSerialized)
+                If (!Arg2)
                 {
-                    If (!Arg2)
+                    Return (Buffer (One)
                     {
-                        Return (Buffer ()
-                        {
-                            0x03
-                        })
-                    }
-
-                    Return (Package ()
-                    {
-                        "RM,oem-id", "LENOVO",
-                        "RM,oem-table-id", "T480",
+                         0x03                                             // .
                     })
                 }
 
-                // Overrides for settings in the Info.plist files
-                Name(RMCF, Package()
+                Return (Package (0x04)
                 {
-                    "Keyboard", Package ()
-                    {
-                        "ActionSwipeLeft",  "37 d, 21 d, 21 u, 37 u",
-                        "ActionSwipeRight", "37 d, 1e d, 1e u, 37 u",
-                        "SleepPressTime",   "500",
-                        "Swap command and option", ">y",
-                        "Custom PS2 Map", Package()
-                        {
-                            Package(Zero) { },
-                            "e038=e05b", //AltGr=Left Windows
-                            "e037=64", // PrtSc=F13,via SysPrefs->Keyboard->Shortcuts
-                        },
-                    },
+                    "RM,oem-id", 
+                    "LENOVO", 
+                    "RM,oem-table-id", 
+                    "T480"
                 })
             }
+
+            Name (RMCF, Package (0x02)
+            {
+                "Keyboard", 
+                Package (0x0A)
+                {
+                    "ActionSwipeLeft", 
+                    "37 d, 21 d, 21 u, 37 u", 
+                    "ActionSwipeRight", 
+                    "37 d, 1e d, 1e u, 37 u", 
+                    "SleepPressTime", 
+                    "500", 
+                    "Swap command and option", 
+                    ">y", 
+                    "Custom PS2 Map", 
+                    Package (0x03)
+                    {
+                        Package (0x00){}, 
+                        "e038=e05b", 
+                        "e037=64"
+                    }
+                }
+            })
         }
+    }
 }
-//EOF
+

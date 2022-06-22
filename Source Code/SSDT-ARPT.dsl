@@ -1,19 +1,10 @@
-//
-// Adds the OSX-native ACPI-interface for broadcom-wifi-cards.
-//
-// Stub for now, needs rework to be actually useful.
-//
 DefinitionBlock ("", "SSDT", 2, "T480", "ARPT", 0x00002000)
 {
-    // External method from SSDT-UTILS.dsl
-    External (OSDW, MethodObj) // 0 Arguments
-    External (DTGP, MethodObj) // 5 Arguments
+    External (_SB_.PCI0.RP01, DeviceObj)
+    External (_SB_.PCI0.RP01.PXSX, DeviceObj)
+    External (DTGP, MethodObj)    // 5 Arguments
+    External (OSDW, MethodObj)    // 0 Arguments
 
-    External (_SB.PCI0.RP01, DeviceObj)
-    External (_SB.PCI0.RP01.PXSX, DeviceObj)
-
-
-    // WIFI
     Scope (_SB.PCI0.RP01)
     {
         Method (_STA, 0, NotSerialized)  // _STA: Status
@@ -24,25 +15,18 @@ DefinitionBlock ("", "SSDT", 2, "T480", "ARPT", 0x00002000)
         Method (_PS0, 0, Serialized)  // _PS0: Power State 0
         {
             Debug = "ARPT:_PS0"
-
-            If (OSDW ())
-            {
-            }
+            If (OSDW ()){}
         }
 
         Method (_PS3, 0, Serialized)  // _PS3: Power State 3
         {
             Debug = "ARPT:_PS3"
-
-            If (OSDW ())
-            {
-            }
+            If (OSDW ()){}
         }
 
         Scope (PXSX)
         {
             Name (_GPE, 0x31)  // _GPE: General Purpose Events
-
             OperationRegion (ARE2, PCI_Config, Zero, 0x80)
             Field (ARE2, ByteAcc, NoLock, Preserve)
             {
@@ -75,15 +59,19 @@ DefinitionBlock ("", "SSDT", 2, "T480", "ARPT", 0x00002000)
 
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Local0 = Package ()
+                Local0 = Package (0x0A)
                     {
-                        "name", "AirPort Extreme", 
-                        "model", "Broadcom Wireless Network Adapter",
-                        "device_type", "Network controller",
-                        "built-in", One,
-                        "brcmfx-country", "#a"
+                        "name", 
+                        "AirPort Extreme", 
+                        "model", 
+                        "Broadcom Wireless Network Adapter", 
+                        "device_type", 
+                        "Network controller", 
+                        "built-in", 
+                        One, 
+                        "brcmfx-country", 
+                        "#a"
                     }
-
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
@@ -100,4 +88,4 @@ DefinitionBlock ("", "SSDT", 2, "T480", "ARPT", 0x00002000)
         }
     }
 }
-// EOF
+
