@@ -4,13 +4,13 @@
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-e05a69d-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.3-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.2.1
+   <strong>Version: </strong>1.2.2
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -31,8 +31,6 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 ## 📝 To-Do
 These features will be implemented in a future update:
 
-- [X] Include HeliPort Version
-- [X] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
 - [X] macOS Ventura support
 - [ ] Touchscreen support
 
@@ -45,7 +43,7 @@ These features will be implemented in a future update:
 
 In version 1.2.0, support for macOS Ventura was added. To update your system to Ventura, the following steps must be performed:
 
-1. Replace your current OpenCore confifguration with `EFI - Ventura`. See `♻️ Upgrade macOS / Switch EFI` for more infos.
+1. Replace your current OpenCore configuration with `EFI - Ventura`. See `♻️ Upgrade macOS / Switch EFI` for more infos.
 
 2. Enroll your device to the Developer Seed. Use `macOS Developer Beta Access Utility` from your Apple Developer Account or by typing the following command into the Terminal: `/System/Library/PrivateFrameworks/Seeding.framework/Versions/Current/Resources/seedutil enroll DeveloperSeed`
 
@@ -54,7 +52,10 @@ In version 1.2.0, support for macOS Ventura was added. To update your system to 
 
 ### Tested Builds
 - [X] Developer Beta 1 `(22A5266r)` 
-- [ ] Developer Beta 2 `(22A5286j)`
+- [X] Developer Beta 2 `(22A5286j)`
+- [X] Developer Beta 3 `(22A5295h & 22A5295i)`
+- [X] Developer Beta 4 `(22A5311f)`
+- [X] Developer Beta 5 `(22A5321d)`
 
 <a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
 Current state of macOS Ventura »</strong></a>
@@ -80,7 +81,9 @@ Download HeliPort app »</strong></a>
 <details>
 <summary><strong>💻 My Hardware</strong></summary>
 <br>
-These are the Hardware component I use. But this OpenCore configuation **should still work** with your device, even if the components are not equal.
+These are the Hardware component I use. But this OpenCore configuation <strong>should still work</strong> with your device, even if the components are not equal.
+
+> **Note** Check the model of your WiFi & Bluetooth card. Intel cards should be compatible with itlwm (or AirportItlwm). If your card is from another manufacturer, please check if your card supports macOS.
 
 | Category  | Component                            |
 | --------- | ------------------------------------ |
@@ -106,8 +109,8 @@ These are the Hardware component I use. But this OpenCore configuation **should 
 You must have the following items:
 - Lenovo ThinkPad T480 (Obviously 😁).
 - Access to a working Windows machine with Python installed.
-- A pendrive with more than 4 GB (Keep in mind, during the preperation we will format the disk to create the install media).
-- an Internet connection via Ethernet.
+- A pendrive with more than 4 GB (Remember that during the preparation we will format the flash drive to create the installation media).
+- an Internet connection (recommended via Ethernet).
 - 1-2 hours of your time.
 
 </details>
@@ -343,4 +346,4 @@ This repo is licensed under the [MIT License](https://github.com/valnoxy/t480-oc
 OpenCore is licensed under the [BSD 3-Clause License](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt).
 
 ---
-```Copyright (c) 2018 - 2022 valnoxy. By Jonas G. <jonas@exploitox.de>```
+```Copyright (c) 2018 - 2022 valnoxy. By Jonas Günner. <jonas@exploitox.de>```
