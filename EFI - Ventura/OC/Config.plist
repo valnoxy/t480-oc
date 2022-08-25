@@ -2015,8 +2015,6 @@
 				<string>ForceDisplayRotationInEFI</string>
 			</array>
 		</dict>
-		<key>LegacyEnable</key>
-		<false/>
 		<key>LegacyOverwrite</key>
 		<false/>
 		<key>LegacySchema</key>
@@ -2340,7 +2338,7 @@
 				<key>Address</key>
 				<integer>569344</integer>
 				<key>Comment</key>
-				<string>Fix black screen on wake from hibernation for Lenovo Thinkpad T480/T490</string>
+				<string>Fix black screen on wake from hibernation for Lenovo Thinkpad T490</string>
 				<key>Enabled</key>
 				<false/>
 				<key>Size</key>
