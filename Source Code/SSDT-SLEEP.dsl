@@ -26,185 +26,182 @@ DefinitionBlock ("", "SSDT", 2, "T480", "SLEEP", 0x00001000)
 
     Name (DIEN, Zero)
     Name (INIB, One)
-
-    If (_OSI ("Darwin"))
+    If (OSDW ())
     {
-        If (OSDW ())
+        Debug = "SLEEP: Enabling comprehensive S3-patching..."
+        STY0 = Zero
+        S0ID = Zero
+        If (((STY0 == Zero) && !CondRefOf (\_S3)))
         {
-            Debug = "SLEEP: Enabling comprehensive S3-patching..."
-            STY0 = Zero
-            S0ID = Zero
-            If (((STY0 == Zero) && !CondRefOf (\_S3)))
+            Name (\_S3, Package (0x04)  // _S3_: S3 System State
             {
-                Name (\_S3, Package (0x04)  // _S3_: S3 System State
-                {
-                    0x05, 
-                    0x05, 
-                    Zero, 
-                    Zero
-                })
-                SS3 = One
+                0x05, 
+                0x05, 
+                Zero, 
+                Zero
+            })
+            SS3 = One
+        }
+    }
+
+    Name (XLTP, Zero)
+    Method (_TTS, 1, NotSerialized)  // _TTS: Transition To State
+    {
+        Debug = Concatenate ("SLEEP:_TTS() called with Arg0 = ", Arg0)
+        XLTP = Arg0
+    }
+
+    Scope (_GPE)
+    {
+        Method (LXEN, 0, NotSerialized)
+        {
+            Return (One)
+        }
+    }
+
+    Scope (\)
+    {
+        Method (SPTS, 0, NotSerialized)
+        {
+            Debug = "SLEEP:SPTS"
+            If ((\LIDS != \_SB.PCI0.LPCB.EC.HPLD))
+            {
+                Debug = "SLEEP:SPTS - lid-state unsync."
+                \LIDS = \_SB.PCI0.LPCB.EC.HPLD /* External reference */
+                \_SB.PCI0.GFX0.CLID = LIDS /* External reference */
             }
+
+            \_SB.PCI0.LPCB.EC.LED (0x07, 0xA0)
+            \_SB.PCI0.LPCB.EC.LED (Zero, 0xA0)
+            \_SB.PCI0.LPCB.EC.LED (0x0A, 0xA0)
         }
 
-        Name (XLTP, Zero)
-        Method (_TTS, 1, NotSerialized)  // _TTS: Transition To State
+        Method (SWAK, 0, NotSerialized)
         {
-            Debug = Concatenate ("SLEEP:_TTS() called with Arg0 = ", Arg0)
-            XLTP = Arg0
-        }
-
-        Scope (_GPE)
-        {
-            Method (LXEN, 0, NotSerialized)
+            Debug = "SLEEP:SWAK"
+            If ((\LIDS != \_SB.PCI0.LPCB.EC.HPLD))
             {
-                Return (One)
+                Debug = "SLEEP:SWAK - lid-state unsync."
+                \LIDS = \_SB.PCI0.LPCB.EC.HPLD /* External reference */
+                \_SB.PCI0.GFX0.CLID = LIDS /* External reference */
             }
+
+            Notify (\_SB.LID, 0x80) // Status Change
+            \_SB.PCI0.LPCB.EC.LED (Zero, 0x80)
+            \_SB.PCI0.LPCB.EC.LED (0x0A, 0x80)
+            \_SB.PCI0.LPCB.EC.LED (0x07, 0x80)
+            \PWRS = \_SB.PCI0.LPCB.EC.AC._PSR ()
+            \_SB.SCGE = One
         }
 
-        Scope (\)
+        If (CondRefOf (\ZPTS))
         {
-            Method (SPTS, 0, NotSerialized)
+            Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
             {
-                Debug = "SLEEP:SPTS"
-                If ((\LIDS != \_SB.PCI0.LPCB.EC.HPLD))
+                Debug = Concatenate ("SLEEP:_PTS called - Arg0 = ", Arg0)
+                If ((OSDW () && (Arg0 < 0x05)))
                 {
-                    Debug = "SLEEP:SPTS - lid-state unsync."
-                    \LIDS = \_SB.PCI0.LPCB.EC.HPLD /* External reference */
-                    \_SB.PCI0.GFX0.CLID = LIDS /* External reference */
+                    SPTS ()
                 }
 
-                \_SB.PCI0.LPCB.EC.LED (0x07, 0xA0)
-                \_SB.PCI0.LPCB.EC.LED (Zero, 0xA0)
-                \_SB.PCI0.LPCB.EC.LED (0x0A, 0xA0)
-            }
-
-            Method (SWAK, 0, NotSerialized)
-            {
-                Debug = "SLEEP:SWAK"
-                If ((\LIDS != \_SB.PCI0.LPCB.EC.HPLD))
+                ZPTS (Arg0)
+                If ((OSDW () && (Arg0 == 0x05)))
                 {
-                    Debug = "SLEEP:SWAK - lid-state unsync."
-                    \LIDS = \_SB.PCI0.LPCB.EC.HPLD /* External reference */
-                    \_SB.PCI0.GFX0.CLID = LIDS /* External reference */
-                }
-
-                Notify (\_SB.LID, 0x80) // Status Change
-                \_SB.PCI0.LPCB.EC.LED (Zero, 0x80)
-                \_SB.PCI0.LPCB.EC.LED (0x0A, 0x80)
-                \_SB.PCI0.LPCB.EC.LED (0x07, 0x80)
-                \PWRS = \_SB.PCI0.LPCB.EC.AC._PSR ()
-                \_SB.SCGE = One
-            }
-
-            If (CondRefOf (\ZPTS))
-            {
-                Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
-                {
-                    Debug = Concatenate ("SLEEP:_PTS called - Arg0 = ", Arg0)
-                    If ((OSDW () && (Arg0 < 0x05)))
+                    If (CondRefOf (\_SB.PCI0.XHC.PMEE))
                     {
-                        SPTS ()
+                        \_SB.PCI0.XHC.PMEE = Zero
                     }
 
-                    ZPTS (Arg0)
-                    If ((OSDW () && (Arg0 == 0x05)))
+                    If (CondRefOf (\_SB.PCI0.XDCI.PMEE))
                     {
-                        If (CondRefOf (\_SB.PCI0.XHC.PMEE))
-                        {
-                            \_SB.PCI0.XHC.PMEE = Zero
-                        }
+                        \_SB.PCI0.XDCI.PMEE = Zero
+                    }
 
-                        If (CondRefOf (\_SB.PCI0.XDCI.PMEE))
-                        {
-                            \_SB.PCI0.XDCI.PMEE = Zero
-                        }
+                    If (CondRefOf (\_SB.PCI0.GLAN.PMEE))
+                    {
+                        \_SB.PCI0.GLAN.PMEE = Zero
+                    }
 
-                        If (CondRefOf (\_SB.PCI0.GLAN.PMEE))
-                        {
-                            \_SB.PCI0.GLAN.PMEE = Zero
-                        }
-
-                        If (CondRefOf (\_SB.PCI0.HDAS.PMEE))
-                        {
-                            \_SB.PCI0.HDAS.PMEE = Zero
-                        }
+                    If (CondRefOf (\_SB.PCI0.HDAS.PMEE))
+                    {
+                        \_SB.PCI0.HDAS.PMEE = Zero
                     }
                 }
             }
+        }
 
-            If (CondRefOf (\ZWAK))
+        If (CondRefOf (\ZWAK))
+        {
+            Method (_WAK, 1, Serialized)  // _WAK: Wake
             {
-                Method (_WAK, 1, Serialized)  // _WAK: Wake
+                Debug = Concatenate ("SLEEP:_WAK - called Arg0: ", Arg0)
+                If ((OSDW () && (Arg0 < 0x05)))
                 {
-                    Debug = Concatenate ("SLEEP:_WAK - called Arg0: ", Arg0)
-                    If ((OSDW () && (Arg0 < 0x05)))
-                    {
-                        SWAK ()
-                    }
-
-                    Local0 = ZWAK (Arg0)
-                    Return (Local0)
-                }
-            }
-
-            Method (GPRW, 2, Serialized)
-            {
-                If (OSDW ())
-                {
-                    Local0 = Package (0x02)
-                        {
-                            Zero, 
-                            Zero
-                        }
-                    Local0 [Zero] = Arg0
-                    If ((Arg1 >= 0x04))
-                    {
-                        Local0 [One] = Zero
-                    }
-
-                    Return (Local0)
+                    SWAK ()
                 }
 
-                Return (ZPRW (Arg0, Arg1))
+                Local0 = ZWAK (Arg0)
+                Return (Local0)
             }
         }
 
-        Scope (_SB.PCI0.LPCB)
+        Method (GPRW, 2, Serialized)
         {
-            Method (_PS0, 0, Serialized)  // _PS0: Power State 0
+            If (OSDW ())
             {
-                If (((OSDW () && (DIEN == One)) && (INIB == Zero)))
+                Local0 = Package (0x02)
+                    {
+                        Zero, 
+                        Zero
+                    }
+                Local0 [Zero] = Arg0
+                If ((Arg1 >= 0x04))
                 {
-                    \SWAK ()
+                    Local0 [One] = Zero
                 }
 
-                If ((INIB == One))
-                {
-                    INIB = Zero
-                }
+                Return (Local0)
             }
 
-            Method (_PS3, 0, Serialized)  // _PS3: Power State 3
+            Return (ZPRW (Arg0, Arg1))
+        }
+    }
+
+    Scope (_SB.PCI0.LPCB)
+    {
+        Method (_PS0, 0, Serialized)  // _PS0: Power State 0
+        {
+            If (((OSDW () && (DIEN == One)) && (INIB == Zero)))
             {
-                If ((OSDW () && (DIEN == One)))
-                {
-                    \SPTS ()
-                }
+                \SWAK ()
+            }
+
+            If ((INIB == One))
+            {
+                INIB = Zero
             }
         }
 
-        Scope (_SB)
+        Method (_PS3, 0, Serialized)  // _PS3: Power State 3
         {
-            Method (LPS0, 0, NotSerialized)
+            If ((OSDW () && (DIEN == One)))
             {
-                If ((DIEN == One))
-                {
-                    Debug = "SLEEP: Enable S0-Sleep / DeepSleep"
-                }
-
-                Return (DIEN) /* \DIEN */
+                \SPTS ()
             }
         }
     }
+
+    Scope (_SB)
+    {
+        Method (LPS0, 0, NotSerialized)
+        {
+            If ((DIEN == One))
+            {
+                Debug = "SLEEP: Enable S0-Sleep / DeepSleep"
+            }
+
+            Return (DIEN) /* \DIEN */
+        }
+    }
 }
+
