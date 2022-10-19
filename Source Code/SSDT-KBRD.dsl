@@ -42,7 +42,6 @@ DefinitionBlock ("", "SSDT", 2, "T480", "KBRD", 0x00000000)
                     Package (0x03)
                     {
                         Package (0x00){}, 
-                        "e038=e05b", 
                         "e037=64"
                     }
                 }
