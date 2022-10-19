@@ -32,7 +32,7 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 These features will be implemented in a future update:
 
 - [X] macOS Ventura support
-- [ ] Touchscreen support
+- [X] Touchscreen support
 
 &nbsp;
 
@@ -56,6 +56,13 @@ In version 1.2.0, support for macOS Ventura was added. To update your system to 
 - [X] Developer Beta 3 `(22A5295h & 22A5295i)`
 - [X] Developer Beta 4 `(22A5311f)`
 - [X] Developer Beta 5 `(22A5321d)`
+- [X] Developer Beta 6 `(22A5331f)`
+- [X] Developer Beta 7 `(22A5342f)`
+- [X] Developer Beta 8 `(22A5352e)`
+- [X] Developer Beta 9 `(22A5358e)`
+- [X] Developer Beta 10 `(22A5365d)`
+- [X] Developer Beta 11 `(22A5373b)`
+- [X] Developer Beta 12 RC `(22A379)`
 
 <a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
 Current state of macOS Ventura »</strong></a>
@@ -70,7 +77,7 @@ This repo includes multiple EFI configuations for different macOS Versions.
 
 | EFI               | Description                                                               | Type      |
 | ----------------- | ------------------------------------------------------------------------- | --------- |
-| `EFI - Monterey`  | Supports only macOS Monterey                                              | `Stable`  |
+| `EFI - Monterey`  | Supports only macOS 12 Monterey                                           | `Stable`  |
 | `EFI - HeliPort`  | Supports every macOS Version (except Ventura), Require HeliPort app       | `Stable`  |
 | `EFI - Ventura`   | Supports only macOS 13 Ventura                                            | `Beta`    |
 
@@ -92,7 +99,7 @@ These are the Hardware component I use. But this OpenCore configuation <strong>s
 | SSD       | Intel SSDPEKKF256G8L M.2 NVMe SSD    |
 | Memory    | 8GB DDR4 2400Mhz                     |
 | Camera    | 720p Camera                          |
-| WiFi & BT | Intel Dual Band Wireless AC 8265     |
+| WiFi & BT | Dell DW1830 (BCM43602)               |
 
 </details>  
  
