@@ -73,6 +73,7 @@ This repo includes multiple EFI configuations for different macOS Versions.
 | ----------------- | ------------------------------------------------------------------------- | --------- |
 | `EFI`             | Supports macOS Big Sur, Monterey & Ventura (using Airportitlwm)           | `Stable`  |
 | `EFI - HeliPort`  | Supports every macOS Version (except Ventura), Require HeliPort app       | `Stable`  |
+| `EFI - Broadcom`  | Supports every macOS Version, only for Broadcom Wifi cards                | `Stable`  |
 
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
 Download HeliPort app »</strong></a>
