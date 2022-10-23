@@ -3,53 +3,51 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>20G817</string>
+	<string>19H2026</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>BlueToolFixup</string>
+	<string>IntelBTPatcher</string>
 	<key>CFBundleIdentifier</key>
-	<string>as.acidanthera.BlueToolFixup</string>
+	<string>com.zxystd.IntelBTPatcher</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>BlueToolFixup</string>
+	<string>IntelBTPatcher</string>
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.6.4</string>
+	<string>2.2.0</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.6.4</string>
+	<string>2.2.0</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>13C100</string>
-	<key>DTPlatformName</key>
-	<string>macosx</string>
+	<string>11A420a</string>
 	<key>DTPlatformVersion</key>
-	<string>12.1</string>
+	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>21C46</string>
+	<string>19A547</string>
 	<key>DTSDKName</key>
-	<string>macosx12.1</string>
+	<string>macosx10.15</string>
 	<key>DTXcode</key>
-	<string>1321</string>
+	<string>1100</string>
 	<key>DTXcodeBuild</key>
-	<string>13C100</string>
+	<string>11A420a</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>BlueToolFixup</key>
+		<key>IntelBTPatcher</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
-			<string>as.acidanthera.BlueToolFixup</string>
+			<string>com.zxystd.IntelBTPatcher</string>
 			<key>IOClass</key>
-			<string>BlueToolFixup</string>
+			<string>IntelBTPatcher</string>
 			<key>IOMatchCategory</key>
-			<string>BlueToolFixup</string>
+			<string>IntelBTPatcher</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
@@ -57,11 +55,15 @@
 		</dict>
 	</dict>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.8</string>
+	<string>10.12</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2022 zxystd. All rights reserved.</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>as.vit9696.Lilu</key>
-		<string>1.4.7</string>
+		<string>1.2.0</string>
+		<key>com.apple.iokit.IOUSBHostFamily</key>
+		<string>1.2</string>
 		<key>com.apple.kpi.bsd</key>
 		<string>12.0.0</string>
 		<key>com.apple.kpi.dsep</key>
@@ -75,7 +77,5 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>12.0.0</string>
 	</dict>
-	<key>OSBundleRequired</key>
-	<string>Root</string>
 </dict>
 </plist>

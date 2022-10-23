@@ -1,10 +1,10 @@
 # Lenovo ThinkPad T480 - OpenCore Configuation
 
-<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Monterey.png" alt="macOS Monterey running on the T480" width="425">
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Ventura.png" alt="macOS Ventura running on the T480" width="425">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.3-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.5-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
@@ -56,6 +56,7 @@ In version 1.2.0, support for macOS Ventura was added. To update your system to 
 - [X] Developer Beta 10 `(22A5365d)`
 - [X] Developer Beta 11 `(22A5373b)`
 - [X] Developer Beta 12 RC `(22A379)`
+- [X] Developer Beta 13 RC `(22A380)`
 
 <a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
 Current state of macOS Ventura »</strong></a>
@@ -176,6 +177,15 @@ Delete the generic ```112233445566``` value, and enter your MAC address into the
 
 #### Default keyboard layout and language
 The default keyboard layout and language is ```German```. To change the language, edit the value of ```NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> prev-lang:kbd``` to the value of your language. If your value contains an underscore "```_```", replace it with a hyphen "```-```". The value for English would be ```en-US:0```. You can find a list of all language values [here](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt).
+
+##### ACPI patches
+Please enable / disable the following patches depending on what is installed in your device.
+
+| SSDT              | Affected device            | Description                                                |
+| ----------------- | -------------------------- | ---------------------------------------------------------- |
+| SSDT-ARPT.aml     | Broadcom cards             | Disable Broadcom card during sleep                         |
+| SSDT-OFFTB.aml    | Thunderbolt                | Disable Thunderbolt                                        |
+| SSDT-OFFGDGPU.aml | NVIDIA GeForce MX 150      | Disable NVIDIA GPU (necessary if installed)                |
 
 ### Install OpenCore
 After you've finished with the neccesary tweaks, you have to copy the EFI folder to the EFI partition of your pendrive.
