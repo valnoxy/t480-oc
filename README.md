@@ -1,16 +1,16 @@
 # Lenovo ThinkPad T480 - OpenCore Configuation
 
-<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Monterey.png" alt="macOS Monterey running on the T480" width="425">
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Ventura.png" alt="macOS Ventura running on the T480" width="425">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-e05a69d-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.5-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.2.1
+   <strong>Version: </strong>1.2.2
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -28,15 +28,6 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 
 &nbsp;
 
-## 📝 To-Do
-These features will be implemented in a future update:
-
-- [X] Include HeliPort Version
-- [X] Update README icon (temporary from [T440p-OC repo](https://github.com/valnoxy/t440p-oc))
-- [X] macOS Ventura support
-- [ ] Touchscreen support
-
-&nbsp;
 
 ## 🚧 macOS Ventura Support
 
@@ -45,7 +36,7 @@ These features will be implemented in a future update:
 
 In version 1.2.0, support for macOS Ventura was added. To update your system to Ventura, the following steps must be performed:
 
-1. Replace your current OpenCore confifguration with `EFI - Ventura`. See `♻️ Upgrade macOS / Switch EFI` for more infos.
+1. Replace your current OpenCore configuration with the newest version. See `♻️ Upgrade macOS / Switch EFI` for more infos.
 
 2. Enroll your device to the Developer Seed. Use `macOS Developer Beta Access Utility` from your Apple Developer Account or by typing the following command into the Terminal: `/System/Library/PrivateFrameworks/Seeding.framework/Versions/Current/Resources/seedutil enroll DeveloperSeed`
 
@@ -54,7 +45,19 @@ In version 1.2.0, support for macOS Ventura was added. To update your system to 
 
 ### Tested Builds
 - [X] Developer Beta 1 `(22A5266r)` 
-- [ ] Developer Beta 2 `(22A5286j)`
+- [X] Developer Beta 2 `(22A5286j)`
+- [X] Developer Beta 3 `(22A5295h & 22A5295i)`
+- [X] Developer Beta 4 `(22A5311f)`
+- [X] Developer Beta 5 `(22A5321d)`
+- [X] Developer Beta 6 `(22A5331f)`
+- [X] Developer Beta 7 `(22A5342f)`
+- [X] Developer Beta 8 `(22A5352e)`
+- [X] Developer Beta 9 `(22A5358e)`
+- [X] Developer Beta 10 `(22A5365d)`
+- [X] Developer Beta 11 `(22A5373b)`
+- [X] Developer Beta 12 RC `(22A379)`
+- [X] Developer Beta 13 RC `(22A380)`
+- [X] RTM
 
 <a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
 Current state of macOS Ventura »</strong></a>
@@ -69,18 +72,21 @@ This repo includes multiple EFI configuations for different macOS Versions.
 
 | EFI               | Description                                                               | Type      |
 | ----------------- | ------------------------------------------------------------------------- | --------- |
-| `EFI - Monterey`  | Supports only macOS Monterey                                              | `Stable`  |
+| `EFI`             | Supports macOS Big Sur, Monterey & Ventura (using Airportitlwm)           | `Stable`  |
 | `EFI - HeliPort`  | Supports every macOS Version (except Ventura), Require HeliPort app       | `Stable`  |
-| `EFI - Ventura`   | Supports only macOS 13 Ventura                                            | `Beta`    |
+| `EFI - Broadcom`  | Supports every macOS Version, only for Broadcom Wifi cards                | `Beta`    |
+
+> **Note** The Broadcom configuration is not stable. Use ```EFI``` instead for a better experience (you can also disable Airportitlwm).
 
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
 Download HeliPort app »</strong></a>
 
-
 <details>
 <summary><strong>💻 My Hardware</strong></summary>
 <br>
-These are the Hardware component I use. But this OpenCore configuation **should still work** with your device, even if the components are not equal.
+These are the Hardware component I use. But this OpenCore configuation <strong>should still work</strong> with your device, even if the components are not equal.
+
+> **Note** Check the model of your WiFi & Bluetooth card. Intel cards should be compatible with itlwm (or AirportItlwm). If your card is from another manufacturer, please check if your card supports macOS.
 
 | Category  | Component                            |
 | --------- | ------------------------------------ |
@@ -89,10 +95,10 @@ These are the Hardware component I use. But this OpenCore configuation **should 
 | SSD       | Intel SSDPEKKF256G8L M.2 NVMe SSD    |
 | Memory    | 8GB DDR4 2400Mhz                     |
 | Camera    | 720p Camera                          |
-| WiFi & BT | Intel Dual Band Wireless AC 8265     |
+| WiFi & BT | Dell DW1830 (BCM43602)               |
 
 </details>  
- 
+
 </details>
 
 &nbsp;
@@ -106,8 +112,8 @@ These are the Hardware component I use. But this OpenCore configuation **should 
 You must have the following items:
 - Lenovo ThinkPad T480 (Obviously 😁).
 - Access to a working Windows machine with Python installed.
-- A pendrive with more than 4 GB (Keep in mind, during the preperation we will format the disk to create the install media).
-- an Internet connection via Ethernet.
+- A pendrive with more than 4 GB (Remember that during the preparation we will format the flash drive to create the installation media).
+- an Internet connection (recommended via Ethernet).
 - 1-2 hours of your time.
 
 </details>
@@ -126,8 +132,14 @@ With macrecovery, the process is the following:
 - Open ```cmd.exe``` with Administrator privileges and change the directory to OpenCorePkg-master\Utilities\macrecovery.
 - Enter the following command to download macOS:
 ```
+# Big Sur (11)
+python macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
+
 # Monterey (12)
 python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download
+
+# Ventura (13)
+python macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
 ```
 - After the download succeeded, type ```diskpart``` and wait until you see ```DISKPART>```
 
@@ -141,7 +153,7 @@ python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download
 
 - After the pendrive is clean and converted, we will create a new partition where we can put our files on. First, type ```create partition primary```, then select the new partition with ```select partition 1``` and format it ```format fs=fat32 quick```.
 
-- Finally, mount your pendrive by typing ```assign letter=J```
+- Finally, mount your pendrive by typing ```assign```
 
 - Now, close the Command Prompt and create the folder ```com.apple.recovery.boot``` on the pendrive. Copy ```OpenCorePkg-master\Utilities\macrecovery\BaseSystem.dmg``` and ```Basesystem.chunklist``` into that folder.
 
@@ -158,10 +170,10 @@ We need a script, called [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS), to 
 The process is the following:
 
 - Download GenSMBIOS as a ZIP, then extract it.
-- Start GenSMBIOS.bat and use option 1 to download MacSerial.
-- Choose option 2, to select the path of the config.plist file. It will be located in EFI -> OC folder.
-- Choose option 3, and enter ```MacBookPro15,2``` as the machine type.
-- Press Q to quit. Your config now should contain the requied serials.
+- Start GenSMBIOS.bat and use option ```1``` to download MacSerial.
+- Choose option ```2```, to select the path of the config.plist file. It will be located in ```EFI -> OC``` folder.
+- Choose option ```3```, and enter ```MacBookPro15,2``` as the machine type.
+- Press ```Q``` to quit. Your config now should contain the requied serials.
 
 #### Enter the proper ROM value
 After adding serials to your config.plist, you have to add the computer's MAC address to the config.plist file. **This step is also essential to have a working iMessage, so do not skip it.** We need a Plist editior, to write the MAC address into the config.plist file. I used [ProperTree](https://github.com/corpnewt/ProperTree), since it works on Windows too. You have to change the MAC address value in the config.plist at
@@ -171,7 +183,16 @@ After adding serials to your config.plist, you have to add the computer's MAC ad
 Delete the generic ```112233445566``` value, and enter your MAC address into the field, without any colons. Save the Plist file, and it is now ready to be written out to the EFI partition of your install media.
 
 #### Default keyboard layout and language
-The default keyboard layout and language is ```German```. To change the language, edit the value of ```NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> prev-lang:kbd``` to the value of your language. If your value contains an underscore ```_```, replace it with a hyphen ```-```. The value for English would be ```en-US:0```. You can find a list of all language values [here](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt).
+The default keyboard layout and language is ```German```. To change the language, edit the value of ```NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> prev-lang:kbd``` to the value of your language. If your value contains an underscore "```_```", replace it with a hyphen "```-```". The value for English would be ```en-US:0```. You can find a list of all language values [here](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt).
+
+##### ACPI patches
+Please enable / disable the following patches depending on what is installed in your device.
+
+| SSDT              | Affected device            | Description                                                |
+| ----------------- | -------------------------- | ---------------------------------------------------------- |
+| SSDT-ARPT.aml     | Broadcom cards             | Disable Broadcom card during sleep                         |
+| SSDT-OFFTB.aml    | Thunderbolt                | Disable Thunderbolt                                        |
+| SSDT-OFFGDGPU.aml | NVIDIA GeForce MX 150      | Disable NVIDIA GPU (necessary if installed)                |
 
 ### Install OpenCore
 After you've finished with the neccesary tweaks, you have to copy the EFI folder to the EFI partition of your pendrive.
@@ -315,6 +336,8 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 - [ ] AirDrop & Continuity
 - [ ] Fingerprint Reader (Disabled with NoTouchID kext)
 - [ ] Thunderbolt 3
+- [ ] Sidecar Wireless
+- [ ] Apple Watch Unlock
 
 </details>
 
@@ -322,8 +345,6 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 <summary><strong>🔄 Not tested</strong></summary>
 </br>
 
-- [ ] Sidecar Wireless
-- [ ] Apple Watch Unlock
 - [ ] WWAN
 - [ ] Dualbooting Windows / Linux (with OpenCore)
 
@@ -342,5 +363,10 @@ This repo is licensed under the [MIT License](https://github.com/valnoxy/t480-oc
 
 OpenCore is licensed under the [BSD 3-Clause License](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt).
 
----
-```Copyright (c) 2018 - 2022 valnoxy. By Jonas G. <jonas@exploitox.de>```
+<hr>
+<h6 align="center">© 2018 - 2022 valnoxy. All Rights Reserved. 
+<br>
+By Jonas Günner &lt;jonas@exploitox.de&gt;</h6>
+<p align="center">
+	<a href="https://github.com/valnoxy/t480-oc/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+</p>
