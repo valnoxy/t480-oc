@@ -28,42 +28,6 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 
 &nbsp;
 
-
-## 🚧 macOS Ventura Support
-
-> **Warning**
-> macOS Ventura is still in Beta! I do not recommend this for productive use!
-
-In version 1.2.0, support for macOS Ventura was added. To update your system to Ventura, the following steps must be performed:
-
-1. Replace your current OpenCore configuration with the newest version. See `♻️ Upgrade macOS / Switch EFI` for more infos.
-
-2. Enroll your device to the Developer Seed. Use `macOS Developer Beta Access Utility` from your Apple Developer Account or by typing the following command into the Terminal: `/System/Library/PrivateFrameworks/Seeding.framework/Versions/Current/Resources/seedutil enroll DeveloperSeed`
-
-3. Download macOS Ventura via Software Update. Create a offline installer or simply update.
-
-
-### Tested Builds
-- [X] Developer Beta 1 `(22A5266r)` 
-- [X] Developer Beta 2 `(22A5286j)`
-- [X] Developer Beta 3 `(22A5295h & 22A5295i)`
-- [X] Developer Beta 4 `(22A5311f)`
-- [X] Developer Beta 5 `(22A5321d)`
-- [X] Developer Beta 6 `(22A5331f)`
-- [X] Developer Beta 7 `(22A5342f)`
-- [X] Developer Beta 8 `(22A5352e)`
-- [X] Developer Beta 9 `(22A5358e)`
-- [X] Developer Beta 10 `(22A5365d)`
-- [X] Developer Beta 11 `(22A5373b)`
-- [X] Developer Beta 12 RC `(22A379)`
-- [X] Developer Beta 13 RC `(22A380)`
-- [X] RTM
-
-<a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
-Current state of macOS Ventura »</strong></a>
-
-&nbsp;
-
 ## Introduction
 
 ### EFI folders
