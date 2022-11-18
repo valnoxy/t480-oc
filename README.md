@@ -57,6 +57,7 @@ In version 1.2.0, support for macOS Ventura was added. To update your system to 
 - [X] Developer Beta 11 `(22A5373b)`
 - [X] Developer Beta 12 RC `(22A379)`
 - [X] Developer Beta 13 RC `(22A380)`
+- [X] RTM
 
 <a href="https://github.com/valnoxy/t480-oc/pull/5"><strong>
 Current state of macOS Ventura »</strong></a>
@@ -134,6 +135,9 @@ python macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
 
 # Monterey (12)
 python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download
+
+# Ventura (13)
+python macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
 ```
 - After the download succeeded, type ```diskpart``` and wait until you see ```DISKPART>```
 
