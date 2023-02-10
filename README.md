@@ -4,13 +4,13 @@
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.5-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.8-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.2.2
+   <strong>Version: </strong>1.3.0
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -297,7 +297,7 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 </br>
 
 - [ ] Safari DRM ```Use Chromium powered Browser or Firefox to watch Amazon Prime Video, Netflix, Disney+ and others```
-- [ ] AirDrop & Continuity
+- [ ] AirDrop & Continuity (only devices with Intel WiFi)
 - [ ] Fingerprint Reader (Disabled with NoTouchID kext)
 - [ ] Thunderbolt 3
 - [ ] Sidecar Wireless
@@ -328,7 +328,7 @@ This repo is licensed under the [MIT License](https://github.com/valnoxy/t480-oc
 OpenCore is licensed under the [BSD 3-Clause License](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt).
 
 <hr>
-<h6 align="center">© 2018 - 2022 valnoxy. All Rights Reserved. 
+<h6 align="center">© 2018 - 2023 valnoxy. All Rights Reserved. 
 <br>
 By Jonas Günner &lt;jonas@exploitox.de&gt;</h6>
 <p align="center">
