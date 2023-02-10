@@ -1509,7 +1509,7 @@
 				<key>Comment</key>
 				<string>VoodooI2C.kext</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VoodooI2C</string>
 				<key>MaxKernel</key>
@@ -1527,7 +1527,7 @@
 				<key>Comment</key>
 				<string>VoodooI2CHID.kext</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VoodooI2CHID</string>
 				<key>MaxKernel</key>
