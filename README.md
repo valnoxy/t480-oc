@@ -17,6 +17,8 @@
    <a href="https://github.com/valnoxy/t480-oc/issues">Report Bug</a>
    ·
    <a href="https://github.com/valnoxy/t480-oc/blob/main/CHANGELOG.md">View Changelog</a>
+   ·
+   <a href="https://www.youtube.com/watch?v=thYDWyJuUq4">YouTube Video</a>
   </p>
 </p>
 </br>
