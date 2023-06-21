@@ -1,14 +1,17 @@
 # Lenovo ThinkPad T480 - OpenCore Configuation
 
-<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Monterey.png" alt="macOS Monterey running on the T480" width="300">
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Sonoma.png" alt="macOS Sonoma running on the T480" width="425">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-e05a69d-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![macOS](https://img.shields.io/badge/macOS-Sonoma-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.9.3-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
+   <br />
+   <strong>Version: </strong>1.3.0
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -20,6 +23,61 @@
 </br>
 
 ## 📝 Changelog
+
+<details>  
+<summary><strong>📅 Version 1.3.0: 21.06.2023</strong></summary>
+</br>
+This release supports macOS Sonoma.
+
+The following kexts was removed:
+   - AppleBacklightFixup (merged into WhateverGreen)
+   
+The following base / kexts was updated:
+   - **Airportitlwm**: 2.2.0
+   - **AppleALC**: 1.8.3
+   - **CPUFriend**: 1.2.6
+   - **HibernationFixup**: 1.4.9
+   - **Lilu**: 1.6.6
+   - **VoodooI2C**: 2.7.1
+   - **VoodooPS2**: 2.3.3
+   - **VoodooRMI**: 1.3.5
+   - **WhateverGreen**: 1.6.5
+   - **YogaSMC**: 1.5.3
+   - **VirtualSMC**: 1.3.2
+   - **OpenCore**: 0.9.3
+
+</details>
+
+<details>  
+<summary><strong>📅 Version 1.2.2: 19.11.2022</strong></summary>
+</br>
+
+The following kexts was added:
+   - USBMap (USB mapping)
+   - VoodooI2C (Touchscreen Support)
+   - VoodooI2CHID (Touchscreen Support)
+
+The following base / kexts was updated:
+   - **Airportitlwm**: (Ventura: 2.2.0 DEBUG, Monterey & Big Sur: 2.1.0)
+   - **AppleALC**: 1.7.4
+   - **HibernationFixup**: 1.4.6
+   - **IntelBluetoothFirmware**: 2.2.0
+   - **Lilu**: 1.6.2
+   - **NVMeFix**: 1.1.0
+   - **VirtualSMC (with plugins)**: 1.3.0
+   - **VoodooPC2Controller**: 2.2.9
+   - **WhateverGreen**: 1.6.1
+   - **OpenCore**: 0.8.5
+
+The following config changes was applied:
+   - **Added Thinkpad ACPI / Kernel patches**
+   - **Removed 'LegacyEnable'**
+
+The following ACPI changes was applied:
+   - **Added SSDT-KBTA.aml with source code (ThinkPadAssistant)**
+
+</details>
+
 <details>  
 <summary><strong>📅 Version 1.2.1: 22.06.2022</strong></summary>
 </br>
