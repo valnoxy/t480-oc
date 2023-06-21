@@ -1,16 +1,17 @@
 # Lenovo ThinkPad T480 - OpenCore Configuation
 
-<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Ventura.png" alt="macOS Ventura running on the T480" width="425">
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Sonoma.png" alt="macOS Sonoma running on the T480" width="425">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.5-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![macOS](https://img.shields.io/badge/macOS-Sonoma-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.9.3-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.2.2
+   <strong>Version: </strong>1.3.0
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -28,7 +29,15 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 
 > The ACPI patches and the style of this README are from [EETagent](https://github.com/EETagent/T480-OpenCore-Hackintosh).
 
+> **Important** macOS Sonoma no longer supports Broadcom Wifi cards. Long live Intel?
+
+
 &nbsp;
+
+## 💻 Tested devices
+Some users have reported that similar ThinkPads are compatible with this OpenCore configuration. Here is a list of these devices:
+
+- Lenovo ThinkPad T580
 
 ## Introduction
 
@@ -38,11 +47,8 @@ This repo includes multiple EFI configuations for different macOS Versions.
 
 | EFI               | Description                                                               | Type      |
 | ----------------- | ------------------------------------------------------------------------- | --------- |
-| `EFI`             | Supports macOS Big Sur, Monterey & Ventura (using Airportitlwm)           | `Stable`  |
-| `EFI - HeliPort`  | Supports every macOS Version (except Ventura), Require HeliPort app       | `Stable`  |
-| `EFI - Broadcom`  | Supports every macOS Version, only for Broadcom Wifi cards                | `Beta`    |
-
-> **Note** The Broadcom configuration is not stable. Use ```EFI``` instead for a better experience (you can also disable Airportitlwm).
+| `EFI`             | Supports macOS Monterey, Ventura & Sonoma (using Airportitlwm)            | `Stable`  |
+| `EFI - HeliPort`  | Supports every macOS Version except Ventura, Require HeliPort app         | `Stable`  |
 
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
 Download HeliPort app »</strong></a>
@@ -52,14 +58,14 @@ Download HeliPort app »</strong></a>
 <br>
 These are the Hardware component I use. But this OpenCore configuation <strong>should still work</strong> with your device, even if the components are not equal.
 
-> **Note** Check the model of your WiFi & Bluetooth card. Intel cards should be compatible with itlwm (or AirportItlwm). If your card is from another manufacturer, please check if your card supports macOS.
+> **Note** Check the model of your WiFi & Bluetooth card. Intel cards should be compatible with itlwm (or AirportItlwm). If your card is from another manufacturer, please check if your card supports macOS. macOS Sonoma no longer supports Broadcom Wifi cards.
 
 | Category  | Component                            |
 | --------- | ------------------------------------ |
 | CPU       | Intel Core i5-8350U                  |
 | GPU       | Intel UHD Graphics 620               |
 | SSD       | Intel SSDPEKKF256G8L M.2 NVMe SSD    |
-| Memory    | 8GB DDR4 2400Mhz                     |
+| Memory    | 16GB DDR4 2400Mhz                     |
 | Camera    | 720p Camera                          |
 | WiFi & BT | Dell DW1830 (BCM43602)               |
 
@@ -121,11 +127,9 @@ python macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
 
 - Finally, mount your pendrive by typing ```assign```
 
-- Now, close the Command Prompt and create the folder ```com.apple.recovery.boot``` on the pendrive. Copy ```OpenCorePkg-master\Utilities\macrecovery\BaseSystem.dmg``` and ```Basesystem.chunklist``` into that folder.
+- Now, close the Command Prompt and copy the folder ```com.apple.recovery.boot``` on the pendrive. 
 
->  **Note**: If you can't find BaseSystem.dmg, use RecoveryImage.dmg and RecoveryImage.chunklist instead.
-
-After the install media was created, we need to make the USB drive bootable.
+Now we are ready to make the USB drive bootable.
 
 ### Configure and install OpenCore
 Download the EFI folder from this repo, you will find the latest files under the release tab or just download the repo as it is. Move the folder to the root of your pendrive (e.g. J:\) and rename the folder to ```EFI```.
@@ -263,6 +267,9 @@ Big Sur:
 Monterey:
 ```sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyUSB --downloadassets```
 
+Ventura:
+```sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/MyUSB --downloadassets```
+
 After creating the install media, copy your EFI folder to the EFI partition of your USB device.
 
 
@@ -299,11 +306,12 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 </br>
 
 - [ ] Safari DRM ```Use Chromium powered Browser or Firefox to watch Amazon Prime Video, Netflix, Disney+ and others```
-- [ ] AirDrop & Continuity
+- [ ] AirDrop & Continuity (only devices with Intel WiFi)
 - [ ] Fingerprint Reader (Disabled with NoTouchID kext)
 - [ ] Thunderbolt 3
 - [ ] Sidecar Wireless
 - [ ] Apple Watch Unlock
+- [ ] Dualbooting Windows / Linux (with OpenCore) ```Theoretically, this works, but due to the ACPI patches, the respective operating system can become unstable.```
 
 </details>
 
@@ -312,7 +320,6 @@ After creating the install media, copy your EFI folder to the EFI partition of y
 </br>
 
 - [ ] WWAN
-- [ ] Dualbooting Windows / Linux (with OpenCore)
 
 </details>
 
@@ -330,7 +337,7 @@ This repo is licensed under the [MIT License](https://github.com/valnoxy/t480-oc
 OpenCore is licensed under the [BSD 3-Clause License](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt).
 
 <hr>
-<h6 align="center">© 2018 - 2022 valnoxy. All Rights Reserved. 
+<h6 align="center">© 2018 - 2023 valnoxy. All Rights Reserved. 
 <br>
 By Jonas Günner &lt;jonas@exploitox.de&gt;</h6>
 <p align="center">
