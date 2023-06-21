@@ -20,6 +20,17 @@
 </br>
 
 ## 📝 Changelog
+<details>
+<summary><strong>📅 Version 1.2.3: 21.06.2023</strong></summary>
+</br>
+
+### Changes
+- Updated to OpenCore 0.9.3
+- Fixed Bluetooth not working
+- Improved Power Management
+- Added RAM Slot menu in the ```MacBookPro15,2``` SMBIOS
+</details>
+
 <details>  
 <summary><strong>📅 Version 1.2.1: 22.06.2022</strong></summary>
 </br>
