@@ -38,6 +38,7 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 Some users have reported that similar ThinkPads are compatible with this OpenCore configuration. Here is a list of these devices:
 
 - Lenovo ThinkPad T580
+- [Lenovo ThinkPad X280](https://github.com/valnoxy/t480-oc/discussions/47)
 
 ## Introduction
 
