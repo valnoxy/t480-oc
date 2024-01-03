@@ -168,6 +168,12 @@ Please enable / disable the following patches depending on what is installed in 
 | SSDT-OFFTB.aml    | Thunderbolt                | Disable Thunderbolt                                        |
 | SSDT-OFFGDGPU.aml | NVIDIA GeForce MX 150      | Disable NVIDIA GPU (necessary if installed)                |
 
+
+##### Touchscreen Support
+If you want to have touchscreen support, enable the following kexts: ```VoodooI2C.kext``` & ```VoodooI2CHID.kext```.
+
+> **Important** Due to a bug, the system may become unstable when these kexts are active. So if problems occur, disable these kexts.
+
 ### Install OpenCore
 After you've finished with the neccesary tweaks, you have to copy the EFI folder to the EFI partition of your pendrive.
 
