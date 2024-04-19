@@ -92,7 +92,7 @@ You must have the following items:
 </details>
 
 <details>  
-<summary><strong>⚙️ Preperation</strong></summary>
+<summary><strong>⚙️ Preparation</strong></summary>
 </br>
 
 ### Create the install media
@@ -203,7 +203,7 @@ In Startup menu, set the following options:
 
 In Thunderbolt menu, set the following options:
 
--  `Thunderbolt BIOS Assist Mode`: **UEFI Only**
+-  `Thunderbolt BIOS Assist Mode`: **Disabled**
 -  `Wake by Thunderbolt(TM) 3`: **No**
 -  `Security Level`: **No**
 -  `Support in Pre Boot Environment > Thunderbolt(TM) device`: **No**
