@@ -29,7 +29,8 @@ This guide is only for the Lenovo ThinkPad T480. I am NOT responsible for any ha
 
 > The ACPI patches and the style of this README are from [EETagent](https://github.com/EETagent/T480-OpenCore-Hackintosh).
 
-> **Important** macOS Sonoma no longer supports Broadcom Wifi cards. Long live Intel?
+> [!IMPORTANT]
+> macOS Sonoma no longer supports Broadcom Wifi cards. Long live Intel?
 
 
 &nbsp;
@@ -59,7 +60,8 @@ Download HeliPort app »</strong></a>
 <br>
 These are the Hardware component I use. But this OpenCore configuation <strong>should still work</strong> with your device, even if the components are not equal.
 
-> **Note** Check the model of your WiFi & Bluetooth card. Intel cards should be compatible with itlwm (or AirportItlwm). If your card is from another manufacturer, please check if your card supports macOS. macOS Sonoma no longer supports Broadcom Wifi cards.
+> [!NOTE]  
+> Check the model of your WiFi & Bluetooth card. Intel cards should be compatible with itlwm (or AirportItlwm). If your card is from another manufacturer, please check if your card supports macOS. macOS Sonoma no longer supports Broadcom Wifi cards.
 
 | Category  | Component                            |
 | --------- | ------------------------------------ |
@@ -114,8 +116,8 @@ python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download
 # Ventura (13)
 python macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
 
-# Sonoma / Latest Image (14)
-python macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
+# Latest version (currently Sonoma 14)
+python macrecovery.py -b Mac-937A206F2EE63C01 -m 00000000000000000 download
 ```
 - After the download succeeded, type ```diskpart``` and wait until you see ```DISKPART>```
 
@@ -125,7 +127,8 @@ python macrecovery.py -b Mac-7BA5B2D9E42DDD94 download
 
 - Now we are gonna clean the pendrive and convert it to GPT. First, type ```clean``` and then ```convert gpt```.
 
->  **Note**: If an error occurred, try to convert again by typing ```convert gpt```.
+> [!NOTE]  
+> If an error occurred, try to convert again by typing ```convert gpt```.
 
 - After the pendrive is clean and converted, we will create a new partition where we can put our files on. First, type ```create partition primary```, then select the new partition with ```select partition 1``` and format it ```format fs=fat32 quick```.
 
@@ -212,11 +215,13 @@ Now you can go through the install.
 
 ### Install macOS
 1. Boot from USB, press ```SPACE``` and select the USB drive inside of OpenCore ```"NO NAME (DMG)" or similar```.
->  **Note:** The first boot may take up to 20 minutes.
+> [!NOTE]  
+> The first boot may take up to 20 minutes.
 2. Wait for the macOS Utilities screen.
 3. Select Disk Utility, select your disk and click erase. Give a name and choose **APFS** with **GUID Partition Map**.
 4. After erasing, go back and select **Reinstall macOS** and follow the steps on your screen. The installation make take up to **2 hours**.
->  **Note:** Your PC will restart multiple times. Just boot from USB and select your disk inside of OpenCore. (named macOS Installer or the disk name).
+> [!NOTE]  
+> Your PC will restart multiple times. Just boot from USB and select your disk inside of OpenCore. (named macOS Installer or the disk name).
 5. Once you see the `Region selection` screen, you are good to proceed.
 6. Create your user accound and everything else.
 
@@ -228,11 +233,13 @@ Now you can go through the install.
 
 If you plan to upgrade your macOS (or updating the EFI / switching to HeliPort), you'll need a different OpenCore configuation (EFI). Please follow these steps:
 
-> Note: Download the desired macOS version in the Settings before following these steps, if you are connected via WiFi.
+> [!NOTE]  
+> Download the desired macOS version in the Settings before following these steps, if you are connected via WiFi.
 
 1. Download the newest release & [ProperTree](https://github.com/corpnewt/ProperTree) and extract it.
 2. Start ProperTree and load the ```Config.plist``` on your EFI partition. (File -> Open)
-> Note: You can mount your EFI partition by pressing ```ALT + SPACE```, typing Terminal and enter the following command: ```sudo diskutil mountDisk disk0s1```.
+> [!NOTE]  
+> You can mount your EFI partition by pressing ```ALT + SPACE```, typing Terminal and enter the following command: ```sudo diskutil mountDisk disk0s1```.
 3. Now also load the new configuration file from the repo for the desired macOS installation (or HeliPort config). 
 4. You should now have 2 ProperTree-windows open on your screen.
 5. Go in both windows to ```Root -> PlatformInfo -> Generic```. Transfer ```MLB, ROM, SystemProductName, SystemSerialNumber and SystemUUID``` to the new config. 
@@ -347,7 +354,7 @@ This repo is licensed under the [MIT License](https://github.com/valnoxy/t480-oc
 OpenCore is licensed under the [BSD 3-Clause License](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt).
 
 <hr>
-<h6 align="center">© 2018 - 2023 valnoxy. All Rights Reserved. 
+<h6 align="center">© 2018 - 2024 valnoxy. All Rights Reserved. 
 <br>
 By Jonas Günner &lt;jonas@exploitox.de&gt;</h6>
 <p align="center">
