@@ -27,21 +27,23 @@
 ## 📝 Changelog
 
 <details>  
-<summary><strong>📅 Version 1.4.0: 03.01.2024</strong></summary>
+<summary><strong>📅 Version 1.4.0: 26.08.2024</strong></summary>
 </br>
+This release supports macOS Sequoia.
 
 The following base / kexts was updated:
-   - **Airportitlwm (Sonoma)**: 2.3.0-alpha
-   - **AppleALC**: 1.8.8
+   - **Airportitlwm**: 2.3.0
+   - **AppleALC**: 1.9.2
    - **BlueToolFixup**: 2.6.8
-   - **CPUFriend**: 1.2.7
+   - **CPUFriend**: 1.2.8
    - **IntelBluetoothFirmware**: 2.3.0
    - **IntelBluetoothInjector**: 2.3.0
    - **IntelBTPatcher**: 2.3.0
-   - **Lilu**: 1.6.7
+   - **Lilu**: 1.6.8
    - **NVMeFix**: 1.1.1
-   - **WhateverGreen**: 1.6.6
-   - **OpenCore**: 0.9.7
+   - **WhateverGreen**: 1.6.8
+   - **VirtualSMC**: 1.3.3
+   - **OpenCore**: 1.0.0
 
 </details>
 
