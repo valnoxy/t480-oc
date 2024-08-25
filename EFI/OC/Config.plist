@@ -6,6 +6,7 @@
 	<dict>
 		<key>Add</key>
 		<array>
+			<!-- Optional -->
 			<dict>
 				<key>Comment</key>
 				<string>Disable Broadcom card during sleep</string>
@@ -30,6 +31,7 @@
 				<key>Enabled</key>
 				<false/>
 			</dict>
+			<!-- /Optional -->
 			<dict>
 				<key>Comment</key>
 				<string>SSDT-AC</string>
@@ -1896,7 +1898,7 @@
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/IntelBTPatcher</string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>23.99.99</string>
 				<key>MinKernel</key>
 				<string>17.0.0</string>
 				<key>PlistPath</key>
