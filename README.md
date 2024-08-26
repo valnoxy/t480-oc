@@ -79,6 +79,8 @@ Check the model of your WiFi & Bluetooth card. Intel cards should be compatible 
 
 </details>
 
+&nbsp;
+
 ## Status
 
 <details>  
