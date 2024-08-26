@@ -5,13 +5,13 @@
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Sonoma-brightgreen.svg)](https://developer.apple.com/documentation/macos-release-notes)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.9.3-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.9.7-blue)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.3.0
+   <strong>Version: </strong>1.4.0
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -25,6 +25,27 @@
 </br>
 
 ## 📝 Changelog
+
+<details>  
+<summary><strong>📅 Version 1.4.0: 26.08.2024</strong></summary>
+</br>
+This release supports macOS Sequoia.
+
+The following base / kexts was updated:
+   - **Airportitlwm**: 2.3.0
+   - **AppleALC**: 1.9.2
+   - **BlueToolFixup**: 2.6.8
+   - **CPUFriend**: 1.2.8
+   - **IntelBluetoothFirmware**: 2.3.0
+   - **IntelBluetoothInjector**: 2.3.0
+   - **IntelBTPatcher**: 2.3.0
+   - **Lilu**: 1.6.8
+   - **NVMeFix**: 1.1.1
+   - **WhateverGreen**: 1.6.8
+   - **VirtualSMC**: 1.3.3
+   - **OpenCore**: 1.0.0
+
+</details>
 
 <details>  
 <summary><strong>📅 Version 1.3.0: 21.06.2023</strong></summary>
