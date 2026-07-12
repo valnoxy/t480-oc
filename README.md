@@ -6,13 +6,14 @@
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg?logo=apple)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Sonoma-brightgreen.svg?logo=apple)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Sequoia-brightgreen.svg?logo=apple)](https://developer.apple.com/documentation/macos-release-notes)
+[![macOS](https://img.shields.io/badge/macOS-Tahoe-yellow.svg?logo=apple)](https://developer.apple.com/documentation/macos-release-notes)
 [![OpenCore](https://img.shields.io/badge/OpenCore-1.0.0-blue.svg)](https://github.com/acidanthera/OpenCorePkg)
 [![License](https://img.shields.io/badge/license-MIT-purple.svg)](/LICENSE)
 
 <p align="center">
    <strong>Status: Maintained</strong>
    <br />
-   <strong>Version: </strong>1.4.0
+   <strong>Version: </strong>1.5.0
    <br />
    <a href="https://github.com/valnoxy/t480-oc/releases"><strong>Download now »</strong></a>
    <br />
@@ -51,10 +52,10 @@ Some users have reported that similar ThinkPads are compatible with this OpenCor
 
 This repo includes multiple EFI configuations for different macOS Versions.
 
-| EFI               | Description                                                               | Type      |
-| ----------------- | ------------------------------------------------------------------------- | --------- |
-| `EFI`             | Supports macOS Monterey, Ventura, Sonoma & Sequoia (using Airportitlwm)   | `Stable`  |
-| `EFI - HeliPort`  | Supports every macOS Version except Ventura, Require HeliPort app         | `Stable`  |
+| EFI               | Description                                                                      | Type      |
+| ----------------- | -------------------------------------------------------------------------------- | --------- |
+| `EFI`             | Supports macOS Monterey, Ventura, Sonoma, Sequoia & Tahoe (using Airportitlwm)   | `Stable`  |
+| `EFI - HeliPort`  | Supports every macOS Version except Ventura, Require HeliPort app                | `Stable`  |
 
 <a href="https://github.com/OpenIntelWireless/HeliPort/releases"><strong>
 Download HeliPort app »</strong></a>
