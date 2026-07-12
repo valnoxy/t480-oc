@@ -146,7 +146,7 @@ This repo is licensed under the [MIT License](https://github.com/valnoxy/t480-oc
 OpenCore is licensed under the [BSD 3-Clause License](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt).
 
 <hr>
-<h6 align="center">© 2018 - 2024 valnoxy. All Rights Reserved. 
+<h6 align="center">© 2018 - 2026 valnoxy. All Rights Reserved. 
 <br>
 By Jonas Günner &lt;jonas@exploitox.de&gt;</h6>
 <p align="center">
