@@ -28,9 +28,8 @@
 
 ## 📝 Changelog
 
-<details>  
-<summary><strong>📅 Version 1.5.0: 12.07.2026</strong></summary>
-</br>
+### 📅 Version 1.5.0: 12.07.2026
+
 This release supports macOS Tahoe.
 In addition, more patches were added to make Thunderbolt functional.
 
@@ -67,11 +66,8 @@ The following base / kexts was updated:
 - **WhateverGreen**: 1.7.0
 - **OpenCore**: 1.0.7
 
-</details>
+### 📅 Version 1.4.0: 26.08.2024
 
-<details>  
-<summary><strong>📅 Version 1.4.0: 26.08.2024</strong></summary>
-</br>
 This release supports macOS Sequoia.
 
 The following base / kexts was updated:
@@ -89,11 +85,8 @@ The following base / kexts was updated:
 - **VirtualSMC**: 1.3.3
 - **OpenCore**: 1.0.0
 
-</details>
+### 📅 Version 1.3.0: 21.06.2023
 
-<details>  
-<summary><strong>📅 Version 1.3.0: 21.06.2023</strong></summary>
-</br>
 This release supports macOS Sonoma.
 
 The following kexts was removed:
@@ -115,11 +108,7 @@ The following base / kexts was updated:
 - **VirtualSMC**: 1.3.2
 - **OpenCore**: 0.9.3
 
-</details>
-
-<details>  
-<summary><strong>📅 Version 1.2.2: 19.11.2022</strong></summary>
-</br>
+### 📅 Version 1.2.2: 19.11.2022
 
 The following kexts was added:
 
@@ -151,9 +140,7 @@ The following ACPI changes was applied:
 
 </details>
 
-<details>  
-<summary><strong>📅 Version 1.2.1: 22.06.2022</strong></summary>
-</br>
+### 📅 Version 1.2.1: 22.06.2022
 
 ### Changes
 
@@ -168,17 +155,14 @@ The following ACPI changes was applied:
 - **BrcmPatchRAM**: 2.6.2
 - **WhateverGreen**: 1.5.9
 
-</details>
 
-<details>  
-<summary><strong>📅 Version 1.2.0: 12.06.2022</strong></summary>
-</br>
+### 📅 Version 1.2.0: 12.06.2022
 
-### Changes
+#### Changes
 
 - Add macOS 13 Ventura beta support
 
-### OpenCore / Kext Versions:
+#### OpenCore / Kext Versions:
 
 - **OpenCore**: Modified version of [e05a69d](https://github.com/acidanthera/OpenCorePkg/commit/e05a69da640009ac1983c7c8c78af4f0d9b4bc6f)
 - **AppleALC**: 1.7.3 ([bce915e](https://github.com/acidanthera/AppleALC/commit/bce915e4d52a04447932eef7a32696433d16dc7f))
@@ -186,35 +170,20 @@ The following ACPI changes was applied:
 - **Lilu**: 1.6.1 ([250b65c](https://github.com/acidanthera/Lilu/commit/250b65cbb4e9c3aced2673b71ac359b5d6771cfe))
 - **WhateverGreen**: 1.5.9
 
-### Screenshot
+#### Screenshot
 
 <img src="https://dl.exploitox.de/t480-oc/T480-Ventura.png" alt="macOS Ventura running on the T480" width="650">
 
-</details>
-
-<details>  
-<summary><strong>📅 Version 1.1.0: 16.05.2022</strong></summary>
-</br>
+### 📅 Version 1.1.0: 16.05.2022
 
 - Add HeliPort support
 - Add macOS 13 Ventura pre-support
 - Update OpenCore to `0.8.0`
 - Update AppleALC to `1.7.1`
 
-</details>
-
-<details>  
-<summary><strong>📅 Version 1.0.1: 02.04.2022</strong></summary>
-</br>
+### 📅 Version 1.0.1: 02.04.2022
 
 - Fix boot chime by adding AudioDxe.efi (issue #2)
 
-</details>
-
-<details>  
-<summary><strong>📅 Version 1.0: 13.03.2022</strong></summary>
-</br>
-
+### 📅 Version 1.0: 13.03.2022
 - Initial commit (supports only Monterey)
-
-</details>
