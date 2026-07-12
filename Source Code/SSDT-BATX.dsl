@@ -276,7 +276,7 @@ DefinitionBlock ("", "SSDT", 2, "T480", "BATX", 0x00009000)
             Name (_UID, Zero)  // _UID: Unique ID
             Name (_PCL, Package (0x01)  // _PCL: Power Consumer List
             {
-                _SB
+                _SB, 
             })
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
