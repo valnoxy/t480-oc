@@ -3,27 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>24G720</string>
+	<string>24G231</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>IntelBTPatcher</string>
+	<string>AppleBCMWLANCompanion</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.zxystd.IntelBTPatcher</string>
+	<string>science.firewolf.bcmc</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>IntelBTPatcher</string>
+	<string>AppleBCMWLANCompanion</string>
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.5.1</string>
+	<string>1.1.0</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.5.1</string>
+	<string>1.1.0</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -42,14 +42,56 @@
 	<string>16F6</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>IntelBTPatcher</key>
+		<key>80211PCI-BCM</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
-			<string>com.zxystd.IntelBTPatcher</string>
+			<string>com.apple.driver.AppleBCMWLANBusInterfacePCIeMac</string>
 			<key>IOClass</key>
-			<string>IntelBTPatcher</string>
+			<string>AppleBCMWLANBusInterfacePCIe</string>
 			<key>IOMatchCategory</key>
-			<string>IntelBTPatcher</string>
+			<string>AppleBCMWLANBusInterfacePCIe</string>
+			<key>IONameMatch</key>
+			<array>
+				<string>pci14e4,43ba</string>
+				<string>pci14e4,43a3</string>
+			</array>
+			<key>IOPCIUseDeviceMapper</key>
+			<true/>
+			<key>IOProbeScore</key>
+			<integer>2048</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>TruePowerOff</key>
+			<true/>
+		</dict>
+		<key>80211PCI-OLY</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleOLYHALMac</string>
+			<key>IOClass</key>
+			<string>AppleOLYHAL</string>
+			<key>IOMatchCategory</key>
+			<string>AppleOLYHALMac</string>
+			<key>IONameMatch</key>
+			<array>
+				<string>pci14e4,43ba</string>
+				<string>pci14e4,43a3</string>
+			</array>
+			<key>IOProbeScore</key>
+			<integer>2048</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>LoggingBundleName</key>
+			<string>com.apple.driver.AppleOLYHALMac</string>
+		</dict>
+		<key>AppleBCMWLANCompanion</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>science.firewolf.bcmc</string>
+			<key>IOClass</key>
+			<string>AppleBCMWLANCompanion</string>
+			<key>IOMatchCategory</key>
+			<string>AppleBCMWLANCompanion</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
@@ -57,15 +99,13 @@
 		</dict>
 	</dict>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.12</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2022 zxystd. All rights reserved.</string>
+	<string>14.6</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>as.vit9696.Lilu</key>
-		<string>1.2.0</string>
-		<key>com.apple.iokit.IOUSBHostFamily</key>
-		<string>1.2</string>
+		<string>1.4.7</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>2.7</string>
 		<key>com.apple.kpi.bsd</key>
 		<string>12.0.0</string>
 		<key>com.apple.kpi.dsep</key>
@@ -79,5 +119,7 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>12.0.0</string>
 	</dict>
+	<key>OSBundleRequired</key>
+	<string>Network-Root</string>
 </dict>
 </plist>
