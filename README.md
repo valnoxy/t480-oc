@@ -1,6 +1,6 @@
 # Lenovo ThinkPad T480 - OpenCore Configuation
 
-<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Sequoia.png" alt="macOS Sequoia running on the T480" width="425">
+<img align="right" src="https://dl.exploitox.de/t480-oc/Hackintosh-T480-Tahoe.png" alt="macOS Tahoe running on the T480" width="425">
 
 [![macOS](https://img.shields.io/badge/macOS-Monterey-brightgreen.svg?logo=apple)](https://developer.apple.com/documentation/macos-release-notes)
 [![macOS](https://img.shields.io/badge/macOS-Ventura-brightgreen.svg?logo=apple)](https://developer.apple.com/documentation/macos-release-notes)
