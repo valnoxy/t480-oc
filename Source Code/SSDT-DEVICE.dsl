@@ -106,34 +106,13 @@ DefinitionBlock ("", "SSDT", 2, "T480", "VDEV", 0x00000000)
         Device (DMAC)
         {
             Name (_HID, EisaId ("PNP0200") /* PC-class DMA Controller */)  // _HID: Hardware ID
-            Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
+            Name (_CRS, Buffer (0x25)  // _CRS: Current Resource Settings
             {
-                IO (Decode16,
-                    0x0000,             // Range Minimum
-                    0x0000,             // Range Maximum
-                    0x01,               // Alignment
-                    0x20,               // Length
-                    )
-                IO (Decode16,
-                    0x0081,             // Range Minimum
-                    0x0081,             // Range Maximum
-                    0x01,               // Alignment
-                    0x11,               // Length
-                    )
-                IO (Decode16,
-                    0x0093,             // Range Minimum
-                    0x0093,             // Range Maximum
-                    0x01,               // Alignment
-                    0x0D,               // Length
-                    )
-                IO (Decode16,
-                    0x00C0,             // Range Minimum
-                    0x00C0,             // Range Maximum
-                    0x01,               // Alignment
-                    0x20,               // Length
-                    )
-                DMA (Compatibility, NotBusMaster, Transfer8_16, )
-                    {4}
+                /* 0000 */  0x47, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0x20,  // G...... 
+                /* 0008 */  0x47, 0x01, 0x81, 0x00, 0x81, 0x00, 0x01, 0x11,  // G.......
+                /* 0010 */  0x47, 0x01, 0x93, 0x00, 0x93, 0x00, 0x01, 0x0D,  // G.......
+                /* 0018 */  0x47, 0x01, 0xC0, 0x00, 0xC0, 0x00, 0x01, 0x20,  // G...... 
+                /* 0020 */  0x2A, 0x10, 0x01, 0x79, 0x00                     // *..y.
             })
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {

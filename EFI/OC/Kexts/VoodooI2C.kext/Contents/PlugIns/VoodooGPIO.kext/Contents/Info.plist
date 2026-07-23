@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>19F101</string>
+	<string>23H124</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -27,19 +27,36 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>11E801a</string>
+	<string></string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>GM</string>
+	<string>13.3</string>
 	<key>DTSDKBuild</key>
-	<string>19G68</string>
+	<string>22E245</string>
 	<key>DTSDKName</key>
-	<string>macosx10.15</string>
+	<string>macosx13.3</string>
 	<key>DTXcode</key>
-	<string>1170</string>
+	<string>1431</string>
 	<key>DTXcodeBuild</key>
-	<string>11E801a</string>
+	<string>14E300c</string>
 	<key>IOKitPersonalities</key>
 	<dict>
+		<key>VoodooGPIOAMD</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>org.coolstar.VoodooGPIO</string>
+			<key>IOClass</key>
+			<string>VoodooGPIOAMD</string>
+			<key>IONameMatch</key>
+			<array>
+				<string>AMD0030</string>
+				<string>AMDI0030</string>
+				<string>AMDI0031</string>
+			</array>
+			<key>IOProviderClass</key>
+			<string>IOService</string>
+		</dict>
 		<key>VoodooGPIOCannonLakeH</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -101,6 +118,19 @@
 			<key>IONameMatch</key>
 			<array>
 				<string>INT344B</string>
+			</array>
+			<key>IOProviderClass</key>
+			<string>IOService</string>
+		</dict>
+		<key>VoodooGPIOTigerLakeLP</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>org.coolstar.VoodooGPIO</string>
+			<key>IOClass</key>
+			<string>VoodooGPIOTigerLakeLP</string>
+			<key>IONameMatch</key>
+			<array>
+				<string>INTC1055</string>
 			</array>
 			<key>IOProviderClass</key>
 			<string>IOService</string>

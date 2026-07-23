@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>19F101</string>
+	<string>23H124</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -17,27 +17,29 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.4</string>
+	<string>1.1.6</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.1.4</string>
+	<string>1.1.6</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>11E801a</string>
+	<string></string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>GM</string>
+	<string>13.3</string>
 	<key>DTSDKBuild</key>
-	<string>19G68</string>
+	<string>22E245</string>
 	<key>DTSDKName</key>
-	<string>macosx10.15</string>
+	<string>macosx13.3</string>
 	<key>DTXcode</key>
-	<string>1170</string>
+	<string>1431</string>
 	<key>DTXcodeBuild</key>
-	<string>11E801a</string>
+	<string>14E300c</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>Voodoo Input</key>
@@ -58,7 +60,7 @@
 		</dict>
 	</dict>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.11</string>
+	<string>10.10</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Kishor Prins. All rights reserved.</string>
 	<key>OSBundleLibraries</key>
